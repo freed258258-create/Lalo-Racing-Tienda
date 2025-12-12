@@ -1,0 +1,190 @@
+/* ======================
+        HERO MANTENIMIENTO
+====================== */
+.hero-mant {
+    height: 400px;
+    background: linear-gradient(0deg, rgba(0,0,0,0.6), rgba(0,0,0,0.2)),
+                url('../img/hero_mant.jpg') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-mant h1 {
+    font-size: 2.6rem;
+    margin-top: 150px;
+    color: var(--blanco);
+}
+
+.hero-mant h2 {
+    font-size: 1.6rem;
+    margin-top: 10px;
+    color: var(--rojo);
+}
+
+/* ======================
+     CATEGORÍAS MANTENIMIENTO
+====================== */
+.cat-section {
+    padding: 50px 40px;
+    text-align: center;
+    overflow-x: hidden; /* evita desbordes */
+}
+
+.cat-section h2 {
+    font-size: 2rem;
+    color: var(--rojo);
+    margin-bottom: 30px;
+}
+
+/* GRID – tarjetas compactas y adaptables */
+.cat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    justify-items: center;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Tarjetas */
+.cat-card {
+    width: 100%;
+    height: 400px;
+    background: var(--gris-oscuro);
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    border: 2px solid transparent;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.cat-card:hover {
+    border-color: var(--rojo);
+    transform: translateY(-5px);
+}
+
+/* Imagen */
+.cat-img {
+    width: 100%;
+    height: 75%;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+/* Título */
+.cat-card h3 {
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--blanco);
+    font-size: 1.2rem;
+    padding: 10px;
+}
+
+/* Botón comprar */
+.btn-buy {
+    display: inline-block;
+    padding: 12px 20px;
+    margin-top: 30px;
+    background: var(--rojo);
+    color: var(--blanco);
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ======================
+        RESPONSIVE
+====================== */
+
+/* Tablets medianas */
+@media (max-width: 900px) {
+
+    .hero-mant {
+        height: 420px;
+    }
+
+    .hero-mant h1 { font-size: 2.2rem; }
+    .hero-mant h2 { font-size: 1.4rem; }
+
+    /* grid flexible mantiene varias columnas */
+    .cat-grid {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 15px;
+    }
+
+    .cat-card {
+        height: 380px;
+    }
+}
+
+/* Celulares grandes */
+@media (max-width: 600px) {
+
+    .hero-mant {
+        height: 350px;
+    }
+
+    .hero-mant h1 { font-size: 1.9rem; }
+    .hero-mant h2 { font-size: 1.2rem; }
+
+    .cat-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 15px;
+    }
+
+    .cat-card {
+        height: auto;
+    }
+
+    .cat-img {
+        height: 180px;
+    }
+
+    .cat-card h3 {
+        font-size: 1rem;
+    }
+}
+
+/* Celulares pequeños */
+@media (max-width: 420px) {
+
+    .hero-mant {
+        height: 300px;
+    }
+
+    .hero-mant h1 { font-size: 1.6rem; }
+    .hero-mant h2 { font-size: 1rem; }
+
+    .cat-section {
+        padding: 30px 15px;
+    }
+
+    .cat-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .cat-card {
+        width: 90%;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .cat-img {
+        height: 160px;
+    }
+
+    .cat-card h3 {
+        font-size: 0.95rem;
+    }
+}

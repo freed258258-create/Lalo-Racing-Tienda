@@ -1,0 +1,456 @@
+:root {
+    --rojo: #d80000;
+    --negro: #0a0a0a;
+    --gris-oscuro: #1a1a1a;
+    --gris: #2a2a2a;
+    --blanco: #ffffff;
+    --fuente: 'Segoe UI', Arial, sans-serif;
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--fuente);
+}
+
+body {
+    background-color: #191717;
+    color: var(--blanco);
+}
+
+/* ======================
+   HEADER SUPERIOR
+====================== */
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--gris-oscuro);
+    border-bottom: 3px solid var(--rojo);
+    padding: 15px 50px;
+    width: 100%;
+}
+
+/* LOGO */
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
+/* MENÚ PRINCIPAL */
+.menu-principal {
+    display: flex;
+    gap: 15px;           /* espacio entre elementos */
+    flex-wrap: nowrap;    /* nunca se van a la siguiente línea */
+    overflow-x: auto;     /* scroll horizontal si no caben */
+    justify-content: flex-start; /* alinear al inicio */
+    padding-bottom: 5px;  /* opcional: evita que el scroll se superponga */
+}
+
+.menu-principal a {
+    flex: 0 0 auto;      /* no se encogen ni crecen, mantienen su tamaño */
+    white-space: nowrap;  /* evita que el texto haga wrap */
+    color: var(--blanco);
+    font-size: 1.1rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.menu-principal a:hover {
+    color: var(--rojo);
+}
+
+
+/* ======================
+   BUSCADOR (MEJORADO)
+====================== */
+.search-container {
+    display: flex;
+    gap: 6px;
+    background: rgba(255,255,255,0.12);
+    padding: 6px 10px;
+    border-radius: 30px;
+    align-items: center;
+    backdrop-filter: blur(3px);
+}
+
+.search-container input {
+    padding: 8px 16px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--blanco);
+    width: 150px;
+}
+
+.search-container input::placeholder {
+    color: #cccccc;
+}
+
+.search-container button {
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.search-container button img {
+    width: 22px;
+    height: 22px;
+    filter: brightness(0) invert(1);
+    transition: 0.3s;
+}
+
+.search-container button img:hover {
+    filter: brightness(0) invert(0.4) sepia(1) saturate(50) hue-rotate(-10deg);
+}
+
+/* ======================
+   SEGUNDA BARRA
+====================== */
+.header-bottom {
+    background: #222;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 25px;
+    width: 100%;
+}
+
+.header-bottom a {
+    text-decoration: none;
+    color: var(--blanco);
+    font-size: 0.95rem;
+}
+
+.header-bottom a:hover {
+    color: var(--rojo);
+}
+
+/* ======================
+        HERO
+====================== */
+.hero {
+    height: 380px;
+    width: 100%;
+    background: url('../img/fondo_hero.jpg') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 120px;
+}
+
+.hero h1 {
+    font-size: 2.4rem;
+    color: var(--blanco);
+    text-shadow: 2px 2px 7px rgba(0,0,0,0.7);
+}
+
+.hero h2 {
+    font-size: 1.9rem;
+    color: var(--rojo);
+    margin-top: 10px;
+    text-shadow: 2px 2px 7px rgba(0,0,0,0.7);
+}
+
+/* MARCAS */
+.marcas {
+    padding: 40px;
+}
+
+.marcas h2 {
+    color: var(--blanco);
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.marcas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.marca-box {
+    background: var(--gris-oscuro);
+    padding: 25px;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    text-align: center;
+    color: var(--blanco);
+    transition: 0.3s;
+}
+
+.marca-box:hover {
+    border-color: var(--rojo);
+}
+
+/* ========== FOOTER PRINCIPAL ========== */
+
+.footer {
+    background: #111;
+    color: #eee;
+    padding-top: 40px;
+    margin-top: 60px;
+    border-top: 3px solid #d10000;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* COLUMNAS */
+.footer-col {
+    flex: 1;
+    min-width: 260px;
+}
+
+/* LOGO */
+.footer-logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* TEXTO */
+.footer-text {
+    font-size: 16px;
+    color: #ccc;
+    line-height: 1.5;
+}
+
+/* TITULOS */
+.footer h4 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #fff;
+    border-left: 4px solid #d10000;
+    padding-left: 10px;
+    font-weight: 600;
+}
+
+/* LISTA DE ENLACES */
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin: 8px 0;
+}
+
+.footer-links a {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #e10000;
+}
+
+/* ICONOS SOCIALES */
+.social-icons img {
+    width: 35px;
+    margin: 8px;
+    transition: 0.3s;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+}
+
+/* CORREO */
+.correo {
+    margin-top: 10px;
+    color: #ccc;
+}
+
+/* PARTE INFERIOR */
+.footer-bottom {
+    background: #000;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 30px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: #888;
+    font-size: 15px;
+}
+
+/* ARREGLA EL INPUT QUE SE VUELVE BLANCO AL ESCRIBIR */
+.search-container input {
+    background: transparent !important;
+    color: var(--blanco);
+}
+
+/* QUITA EL FONDO BLANCO CUANDO EL INPUT TIENE FOCO */
+.search-container input:focus {
+    background: transparent !important;
+    outline: none;
+    box-shadow: none;
+}
+
+input::-webkit-autofill,
+input::-webkit-autofill:hover,
+input::-webkit-autofill:focus {
+    background: transparent !important;
+    -webkit-text-fill-color: var(--blanco) !important;
+    transition: background-color 9999s ease-in-out 0s;
+}
+
+/* ===== ENLACES DEL FOOTER (BONITOS Y SIN SUBRAYADO) ===== */
+.footer-links ul li a {
+    text-decoration: none;      /* Quita subrayado */
+    color: #ffffff;            /* Color blanco elegante */
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+
+/* Cuando el mouse pasa encima */
+.footer-links ul li a:hover {
+    color: #ff3b3b;            /* Rojo elegante al hover */
+    padding-left: 5px;         /* Efecto sutil */
+}
+
+/* Evitar color morado en enlaces visitados */
+.footer-links ul li a:visited {
+    color: #ffffff !important; /* Mantiene el color blanco */
+}
+
+.correo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #ffffff;
+}
+.correo svg {
+    flex-shrink: 0;
+}
+/* ============================
+   RESPONSIVE GENERAL – TABLET
+============================ */
+@media (max-width: 900px) {
+
+    /* HEADER TOP */
+    .header-top {
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 15px 20px;
+    }
+
+    /* MENU PRINCIPAL */
+    .menu-principal {
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+    }
+
+    /* BUSCADOR */
+    .search-container input {
+        width: 120px;
+    }
+
+    /* MARCAS */
+    .marcas-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    /* HEADER TOP */
+    .header-top {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        padding: 12px 15px;
+    }
+
+    .logo img {
+        height: 25px
+    }
+
+    /* RESPONSIVE DEL MENÚ PRINCIPAL */
+
+/* Hasta 674px: se pueden ajustar ligeramente */
+@media (max-width: 674px) {
+    .menu-principal {
+        gap: 18px;
+    }
+    .menu-principal a {
+        font-size: 1rem;
+    }
+}
+
+/* Hasta 380px: pasar a columna */
+@media (max-width: 400px) {
+    .menu-principal a {
+        font-size: 0.85rem;
+        padding: 2px 4px;
+    }
+    .menu-principal a {
+        font-size: 0.95rem;
+    }
+}
+    /* BUSCADOR */
+    .search-container {
+        width: 85%;
+        padding: 6px 10px;
+    }
+
+    .search-container input {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+
+    /* SEGUNDA BARRA */
+    .header-bottom {
+        justify-content: center;
+        gap: 12px;
+        padding: 8px;
+    }
+
+    .header-bottom a {
+        font-size: 0.85rem;
+    }
+
+    /* HERO */
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero h2 {
+        font-size: 1.3rem;
+    }
+
+    /* MARCAS (2 columnas en vez de 1) */
+    .marcas-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    /* FOOTER */
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-col {
+        width: 100%;
+    }
+}

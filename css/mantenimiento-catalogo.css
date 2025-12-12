@@ -1,0 +1,157 @@
+/* ============================
+         VARIABLES
+============================ */
+:root {
+    --rojo: #e10600;
+    --blanco: #ffffff;
+    --gris-oscuro: #1a1a1a;
+}
+
+/* ============================
+           HERO CATÁLOGO
+============================ */
+.hero-fullface {
+    height: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--blanco);
+    background-image: 
+        linear-gradient(0deg, rgba(0,0,0,0.55), rgba(0,0,0,0.2)),
+        url('img/hero_fullface.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.hero-fullface h1 {
+    font-size: 2.6rem;
+    text-shadow: 2px 2px 6px black;
+    margin-top: 150px;
+}
+
+.hero-fullface h2 {
+    color: var(--rojo);
+    font-size: 1.4rem;
+    margin-top: 10px;
+}
+
+
+
+/* ============================
+           CATÁLOGO
+============================ */
+.catalogo {
+    padding: 50px 40px;
+    text-align: center;
+}
+
+.catalogo h2 {
+    font-size: 2.2rem;
+    color: var(--rojo);
+    margin-bottom: 35px;
+}
+
+/* GRID */
+.catalogo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* ============================
+           PRODUCTO
+============================ */
+.product-card {
+    background: var(--gris-oscuro);
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    color: var(--blanco);
+    border: 2px solid transparent; /* ← necesario para hover */
+    transition: 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.product-card:hover {
+    border-color: var(--rojo);
+    transform: translateY(-4px);
+}
+
+.product-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.product-card h3 {
+    margin-top: 12px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.product-card .marca {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 4px;
+}
+
+.product-card .precio {
+    margin-top: 8px;
+    font-size: 1.1rem;
+    color: var(--rojo);
+    font-weight: bold;
+}
+
+/* ============================
+           RESPONSIVE
+============================ */
+
+/* Tablet */
+@media (max-width: 900px) {
+    .hero-fullface {
+        height: 300px;
+        padding: 20px;
+    }
+
+    .hero-fullface h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-fullface h2 {
+        font-size: 1.2rem;
+    }
+
+    .product-card img {
+        height: 220px;
+    }
+}
+
+/* Celular */
+@media (max-width: 600px) {
+    .hero-fullface {
+        height: 240px;
+    }
+
+    .hero-fullface h1 {
+        font-size: 1.9rem;
+    }
+
+    .hero-fullface h2 {
+        font-size: 1.1rem;
+    }
+
+    .catalogo {
+        padding: 30px 20px;
+    }
+
+    .product-card img {
+        height: 180px;
+    }
+}

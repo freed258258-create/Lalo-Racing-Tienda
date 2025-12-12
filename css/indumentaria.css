@@ -1,0 +1,225 @@
+/* ======================
+        VARIABLES
+====================== */
+:root {
+    --rojo: #e10600;
+    --blanco: #ffffff;
+    --gris-oscuro: #1a1a1a;
+}
+
+/* ======================
+        HERO INDUMENTARIA
+====================== */
+.hero-indu {
+    height: 500px;
+    background: linear-gradient(0deg, rgba(0,0,0,0.6), rgba(0,0,0,0.2)),
+                url('') no-repeat center center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 250px;
+    text-align: center;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;   /* 🔥 IMPORTANTE */
+    overflow: hidden;               /* 🔥 SI HAY DESBORDE NO SE NOTA */
+}
+.hero-indu {
+    position: relative;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    color: var(--blanco);
+}
+
+/* Video como fondo */
+.hero-indu .hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.55); /* Sombra para que se lea el texto */
+}
+
+/* Títulos */
+.hero-indu h1 {
+    font-size: 2.6rem;
+}
+
+.hero-indu h2 {
+    font-size: 1.6rem;
+    margin-top: 10px;
+    color: var(--rojo);
+}
+
+
+.hero-indu h1 {
+    font-size: 2.6rem;
+    color: var(--blanco);
+}
+
+.hero-indu h2 {
+    font-size: 1.6rem;
+    margin-top: 10px;
+    color: var(--rojo);
+}
+
+
+/* ======================
+     CATEGORÍAS INDUMENTARIA
+====================== */
+.cat-section {
+    padding: 50px 40px;
+    text-align: center;
+    overflow-x: hidden;   /* Evita desbordes laterales */
+}
+
+.cat-section h2 {
+    font-size: 2rem;
+    color: var(--rojo);
+    margin-bottom: 30px;
+}
+
+/* Grid de tarjetas */
+.cat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Ajustable automáticamente */
+    gap: 15px; /* espacio entre tarjetas */
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Tarjetas verticales */
+.cat-card {
+    width: 100%;
+    height: 500px;
+    background: var(--gris-oscuro);
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    border: 2px solid transparent;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.cat-card:hover {
+    border-color: var(--rojo);
+    transform: translateY(-5px);
+}
+
+/* Imagen de la tarjeta */
+.cat-img {
+    width: 100%;
+    height: 75%;               /* La imagen ocupa el 75% de la tarjeta */
+    background-size: cover;    /* 🔥 Ajusta sin deformar */
+    background-position: center; 
+    
+}
+
+/* Título de la tarjeta */
+.cat-card h3 {
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--blanco);
+    font-size: 1.2rem;
+    padding: 10px;
+}
+
+/* ======================
+        RESPONSIVE
+====================== */
+
+/* 1040px */
+@media (max-width: 1040px) {
+    .cat-card {
+        height: 520px;
+    }
+}
+
+/* Tablets */
+@media (max-width: 900px) {
+
+    .hero-indu {
+        height: 360px;
+    }
+
+    .hero-indu h1 {
+        font-size: 2.2rem;
+    }
+
+    /* Grid flexible mantiene 3 columnas mínimo 180px */
+    .cat-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 15px;
+    }
+
+    .cat-card {
+        height: 480px;
+    }
+}
+
+/* Celulares grandes */
+@media (max-width: 600px) {
+
+    .hero-indu {
+        height: 300px;
+        padding: 0 10px;
+    }
+
+    .hero-indu h1 {
+        font-size: 1.9rem;
+    }
+
+    .hero-indu h2 {
+        font-size: 1.3rem;
+    }
+
+    /* 2 columnas si cabe */
+    .cat-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 15px;
+    }
+
+    .cat-card {
+        height: 380px;
+    }
+
+    .cat-card h3 {
+        font-size: 1rem;
+    }
+}
+
+/* Celulares pequeños */
+@media (max-width: 420px) {
+
+    /* 1 columna */
+    .cat-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .cat-card {
+        width: 85%;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .cat-img {
+        height: 250px;
+    }
+}

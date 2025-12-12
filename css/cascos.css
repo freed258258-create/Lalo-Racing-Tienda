@@ -1,0 +1,239 @@
+/* ======================
+        HERO CASCOS
+====================== */
+.hero-cascos {
+    height: 500px;
+    background: linear-gradient(0deg, rgba(0,0,0,0.6), rgba(0,0,0,0.2)),
+                url('../img/hero_cascos.jpg') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 250px;
+    text-align: center;
+}
+
+.hero-cascos h1 {
+    font-size: 2.6rem;
+    color: var(--blanco);
+}
+
+.hero-cascos h2 {
+    font-size: 1.6rem;
+    margin-top: 10px;
+    color: var(--rojo);
+}
+
+/* ======================
+     CATEGORÍAS CASCOS
+====================== */
+.cat-section {
+    padding: 50px 40px;
+    text-align: center;
+}
+
+.cat-section h2 {
+    font-size: 2rem;
+    color: var(--rojo);
+    margin-bottom: 30px;
+}
+
+/* Fila horizontal */
+.cat-grid {
+    display: flex;
+    flex-wrap: wrap; /* permite que las tarjetas se acomoden en fila hasta que no quepan */
+    justify-content: center;
+    gap: 25px;
+}
+
+/* Tarjetas verticales */
+.cat-card {
+    width: 270px;
+    height: 550px;
+    background: var(--gris-oscuro);
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    border: 2px solid transparent;
+    transition: 0.3s;
+}
+
+.cat-card:hover {
+    border-color: var(--rojo);
+    transform: translateY(-5px);
+}
+
+/* Imagen vertical */
+.cat-img {
+    width: 100%;
+    height: 75%; /* altura proporcional a la tarjeta */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Título */
+.cat-card h3 {
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--blanco);
+    font-size: 1.2rem;
+    padding: 10px;
+}
+
+/* BOTÓN DE COMPRA */
+.btn-buy {
+    display: inline-block;
+    padding: 12px 20px;
+    margin-top: 30px;
+    background: var(--rojo);
+    color: var(--blanco);
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ======================
+        RESPONSIVE
+====================== */
+
+/* Tablets medianas (1024px) */
+@media (max-width: 1024px) {
+    .cat-card {
+        width: 240px;
+        height: 500px;
+    }
+    .cat-card h3 {
+        font-size: 1.15rem;
+    }
+}
+
+/* Tablets pequeñas (900px) */
+@media (max-width: 900px) {
+    .hero-cascos {
+        height: 420px;
+        padding-top: 200px;
+    }
+
+    .hero-cascos h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-cascos h2 {
+        font-size: 1.4rem;
+    }
+
+    /* Mantener tarjetas en fila con flex-wrap */
+    .cat-grid {
+        gap: 20px;
+    }
+
+    .cat-card {
+        width: 210px;
+        height: 460px;
+    }
+}
+
+/* Celulares grandes (600px) */
+@media (max-width: 600px) {
+    .hero-cascos {
+        height: 350px;
+        padding-top: 160px;
+    }
+
+    .hero-cascos h1 {
+        font-size: 1.9rem;
+    }
+
+    .hero-cascos h2 {
+        font-size: 1.2rem;
+    }
+
+    .cat-grid {
+        gap: 15px;
+    }
+
+    .cat-card {
+        width: 80%;
+        max-width: 320px;
+        height: auto; /* se adapta al contenido */
+    }
+
+    .cat-img {
+        height: 180px; /* altura mínima para que se vea la imagen */
+    }
+
+    .cat-card h3 {
+        font-size: 1.05rem;
+        padding: 8px;
+    }
+}
+
+/* Celulares muy pequeños (360px - 420px) */
+@media (max-width: 420px) {
+    .hero-cascos {
+        height: 300px;
+        padding-top: 140px;
+    }
+
+    .hero-cascos h1 {
+        font-size: 1.6rem;
+    }
+
+    .hero-cascos h2 {
+        font-size: 1rem;
+    }
+
+    .cat-section {
+        padding: 30px 15px;
+    }
+
+    .cat-grid {
+        flex-direction: column; /* apilar solo cuando no cabe horizontalmente */
+        gap: 20px;
+    }
+
+    .cat-card {
+        width: 90%;
+        max-width: 320px;
+        height: auto;
+    }
+
+    .cat-img {
+        height: 160px;
+    }
+
+    .cat-card h3 {
+        font-size: 1rem;
+    }
+}
+/* Barra promocional */
+.promo-bar {
+    width: 100%;
+    background: #ff0000; /* Rojo tipo oferta */
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 10px 0;
+    margin-top: 40px;
+    position: relative;
+}
+
+.promo-text {
+    display: inline-block;
+    padding-left: 100%;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    animation: promoMove 12s linear infinite;
+}
+
+/* Animación del texto */
+@keyframes promoMove {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
